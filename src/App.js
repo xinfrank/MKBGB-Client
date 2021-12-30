@@ -6,7 +6,13 @@ const App = () => {
   const [search, setSearch] = useState("");
 
   return (
-    <div className={darkMode ? "dark bg-neutral-900" : "bg-neutral-50"}>
+    <div
+      className={
+        darkMode
+          ? "dark bg-neutral-900 min-h-screen"
+          : "bg-neutral-50 min-h-screen"
+      }
+    >
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}

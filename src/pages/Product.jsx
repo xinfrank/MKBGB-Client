@@ -9,24 +9,23 @@ export const Product = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
-  const fetchKeyboard = async () => {
-    setIsLoading(true);
-    try {
-      const res = await fetch(
-        "https://mkbgb.herokuapp.com/api/keyboards/" + id
-      );
-      const keyboard = await res.json();
-      setIsLoading(false);
-      setIsError(false);
-      setKeyboard(keyboard);
-    } catch (err) {
-      setIsLoading(false);
-      setIsError(true);
-    }
-  };
   useEffect(() => {
-    fetchKeyboard();
-  }, []);
+    (async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(
+          `https://mkbgb.herokuapp.com/api/keyboards/${id}`
+        );
+        const keyboard = await res.json();
+        setIsLoading(false);
+        setIsError(false);
+        setKeyboard(keyboard);
+      } catch (err) {
+        setIsLoading(false);
+        setIsError(true);
+      }
+    })();
+  }, [id]);
 
   if (isLoading) {
     return (

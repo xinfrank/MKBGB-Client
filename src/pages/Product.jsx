@@ -67,8 +67,13 @@ export const Product = () => {
           <p className="text-gray-700 dark:text-neutral-50 text-xl xs:text-2xl font-medium">
             ${keyboard.price}
           </p>
+<<<<<<< HEAD
           <p className="text-gray-700 dark:text-neutral-50 text-lg xs:text-xl mt-5 mb-5 break-words">
             {parse(keyboard.info.split("\\n").join("<br/><br/>"))}
+=======
+          <p className="text-gray-700 dark:text-neutral-50 text-lg xs:text-xl mt-5 mb-5 break-all">
+            {keyboard.info}
+>>>>>>> parent of 116c6f6 (Fixed word wrapping)
           </p>
           <div className="flex justify-between">
             <a

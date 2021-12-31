@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import spinner from "../assets/loading.svg";
+import parse from "html-react-parser";
 
 export const Product = () => {
   const { id } = useParams();
@@ -17,9 +18,9 @@ export const Product = () => {
           `https://mkbgb.herokuapp.com/api/keyboards/${id}`
         );
         const keyboard = await res.json();
+        setKeyboard(keyboard);
         setIsLoading(false);
         setIsError(false);
-        setKeyboard(keyboard);
       } catch (err) {
         setIsLoading(false);
         setIsError(true);
@@ -67,7 +68,7 @@ export const Product = () => {
             ${keyboard.price}
           </p>
           <p className="text-gray-700 dark:text-neutral-50 text-lg xs:text-xl mt-5 mb-5 break-words">
-            {keyboard.info}
+            {parse(keyboard.info.split("\\n").join("<br/><br/>"))}
           </p>
           <div className="flex justify-between">
             <a

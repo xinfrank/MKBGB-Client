@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Card } from "./Card";
 import spinner from "../assets/loading.svg";
 
 export const Products = ({ search }) => {
@@ -53,30 +54,7 @@ export const Products = ({ search }) => {
       <div className="grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 gap-6 mt-5">
         {keyboards_filtered.length > 0 ? (
           keyboards_filtered.map((keyboard) => {
-            return (
-              <Link to={"/product/" + keyboard.uuid} key={keyboard.uuid}>
-                <div className="rounded-md overflow-hidden shadow-md hover:shadow-sky-300/80 dark:hover:shadow-violet-700/50 dark:bg-neutral-800 transition-all">
-                  <img
-                    className="h-52 object-cover w-full"
-                    src={keyboard.img}
-                    alt="keyboard"
-                  />
-                  <div className="px-6 py-2 xs:py-4">
-                    <div className="font-bold text-xl mb-1 xs:mb-2 text-gray-800 dark:text-neutral-50">
-                      {keyboard.name}
-                    </div>
-                    <p className="text-gray-700 dark:text-neutral-100 text-base">
-                      {keyboard.date}
-                    </p>
-                  </div>
-                  <div className="px-6 pb-1 pt-1 xs:pt-2 xs:pb-2">
-                    <span className="inline-block bg-sky-200 dark:bg-violet-300 rounded-full px-3 py-1 text-sm font-semibold dark:text-violet-800 mr-2 mb-2">
-                      ${keyboard.price}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            );
+            return <Card {...keyboard} key={keyboard.uuid} />;
           })
         ) : (
           <h1 className="text-neutral-800 dark:text-neutral-50">

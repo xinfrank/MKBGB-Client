@@ -14,6 +14,7 @@ export const Home = ({ darkMode, setDarkMode }) => {
         setSearch={setSearch}
       />
       <Products search={search} />
+      <div className="h-5"></div>
     </div>
   );
 };

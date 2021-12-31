@@ -66,7 +66,7 @@ export const Product = () => {
           <p className="text-gray-700 dark:text-neutral-50 text-xl xs:text-2xl font-medium">
             ${keyboard.price}
           </p>
-          <p className="text-gray-700 dark:text-neutral-50 text-lg xs:text-xl mt-5 mb-5 break-all">
+          <p className="text-gray-700 dark:text-neutral-50 text-lg xs:text-xl mt-5 mb-5 break-words">
             {keyboard.info}
           </p>
           <div className="flex justify-between">

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import spinner from "../assets/loading.svg";
+import parse from "html-react-parser";
 
 export const Product = () => {
   const { id } = useParams();
@@ -67,7 +68,7 @@ export const Product = () => {
             ${keyboard.price}
           </p>
           <p className="text-gray-700 dark:text-neutral-50 text-lg xs:text-xl mt-5 mb-5 break-all">
-            {keyboard.info}
+            {parse(keyboard.info.replace("\n", "<br /><br />"))}
           </p>
           <div className="flex justify-between">
             <a

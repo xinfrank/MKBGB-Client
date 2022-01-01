@@ -69,7 +69,12 @@ export const Product = () => {
             ${keyboard.price}
           </p>
           <p className="text-gray-700 dark:text-neutral-50 text-lg xs:text-xl mt-5 mb-5 break-all">
-            {parse(keyboard.info.replace("\n", "<br /><br />"))}
+            {parse(
+              keyboard.info
+                .replace("\n", "<br /><br />")
+                .replace("Vendors:", "<br /><br />Vendors:")
+                .replace("Vendor:", "<br /><br />Vendor:")
+            )}
           </p>
           <div className="flex justify-between">
             <a

@@ -21,7 +21,7 @@ export const Navbar = ({ darkMode, setDarkMode, search, setSearch }) => {
           <button
             className="h-11 w-11 rounded-md flex justify-center items-center bg-sky-300 ml-auto z-50"
             type="button"
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={() => setDarkMode((prevTheme) => !prevTheme)}
           >
             <BsSun fill="#000000" size={18} />
           </button>
@@ -29,7 +29,7 @@ export const Navbar = ({ darkMode, setDarkMode, search, setSearch }) => {
           <button
             className="h-11 w-11 rounded-md flex justify-center items-center bg-violet-700 ml-auto z-50"
             type="button"
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={() => setDarkMode((prevTheme) => !prevTheme)}
           >
             <BsMoonFill fill="#FFFFFF" size={18} />
           </button>

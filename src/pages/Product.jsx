@@ -39,7 +39,6 @@ export const Product = () => {
   }
 
   if (isError) {
-    console.log("INSIDE ERROR");
     return (
       <Link to="/">
         <h1 className="text-3xl dark:text-neutral-50 text-gray-800 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

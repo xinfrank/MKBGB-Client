@@ -22,8 +22,8 @@ export const Product = () => {
         setIsLoading(false);
         setIsError(false);
       } catch (err) {
-        setIsLoading(false);
         setIsError(true);
+        setIsLoading(false);
       }
     })();
   }, [id]);
@@ -39,10 +39,11 @@ export const Product = () => {
   }
 
   if (isError) {
+    console.log("INSIDE ERROR");
     return (
       <Link to="/">
         <h1 className="text-3xl dark:text-neutral-50 text-gray-800 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          Something went wrong, click to return home
+          This link expired, click to return home
         </h1>
       </Link>
     );

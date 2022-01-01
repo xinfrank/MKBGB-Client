@@ -7,7 +7,7 @@ export const Products = ({ search }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const keyboards_filtered = keyboards.filter((keyboard) => {
-    return keyboard.name.toLowerCase().indexOf(search) > -1;
+    return keyboard.name.toLowerCase().indexOf(search.toLowerCase()) > -1;
   });
 
   const fetchKeyboards = async () => {
